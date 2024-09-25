@@ -18,8 +18,30 @@ public class LoginStep {
 	
 	@Given("User navigates to login page {string}")
 	public void user_navigates_to_login_page(String url) throws InterruptedException {
-	System.out.println("Navigating to application");
-
+	
+		
+		//Mac Users
+//		WebDriverManager.safaridriver().setup();
+//		driver = new SafariDriver();
+//		
+		
+		//Firfox Window User
+	WebDriverManager.firefoxdriver().setup();
+	driver = new FirefoxDriver();
+		
+		//Edge-WIndows User
+//		WebDriverManager.edgedriver().setup();
+//		driver = new EdgeDriver();
+		
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		driver.get(url);
+		Thread.sleep(2000);
+		
+		
+		System.out.println("Test");
+		System.out.println("Test");
+		System.out.println("Test");
 	}
 	@When("User enters username {string}")
 	public void user_enters_username(String username) {
